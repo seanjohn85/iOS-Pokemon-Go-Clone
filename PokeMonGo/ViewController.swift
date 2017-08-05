@@ -124,14 +124,25 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             let region = MKCoordinateRegionMakeWithDistance(view.annotation!.coordinate, 300, 300)
             //set the region
             map.setRegion(region, animated: true)
-            if let cord = self.manager.location?.coordinate{
-                //check if the user is still in display
-                if MKMapRectContainsPoint(map.visibleMapRect, MKMapPointForCoordinate(cord)){
-                    print("in view")
-                }else{
-                    print("to far away")
+            Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { (timer) in
+                if let cord = self.manager.location?.coordinate{
+                    //check if the user is still in display
+                    if MKMapRectContainsPoint(self.map.visibleMapRect, MKMapPointForCoordinate(cord)){
+                        print("in view")
+                        //get the selected pokemon
+                        let pokemon = (view.annotation as! PokeAnno).pokemon
+                        //update core data to cot for this pokemon
+                        pokemon.cot = true
+                        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+                        //remove cot pokemon
+                        self.map.removeAnnotation(view.annotation!)
+                        
+                    }else{
+                        print("to far away")
+                    }
                 }
-            }
+            })
+            
         }
     }
 
