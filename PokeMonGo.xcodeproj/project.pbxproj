@@ -16,6 +16,7 @@
 		C94D0A101F35D484004EE8F1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C94D0A0F1F35D484004EE8F1 /* MapKit.framework */; };
 		C94D0A121F35E99E004EE8F1 /* PokedexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94D0A111F35E99E004EE8F1 /* PokedexViewController.swift */; };
 		C94D0A141F35EBDE004EE8F1 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94D0A131F35EBDE004EE8F1 /* CoreDataHelper.swift */; };
+		C94D0A161F368040004EE8F1 /* PokemonAnno.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94D0A151F368040004EE8F1 /* PokemonAnno.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		C94D0A0F1F35D484004EE8F1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C94D0A111F35E99E004EE8F1 /* PokedexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokedexViewController.swift; sourceTree = "<group>"; };
 		C94D0A131F35EBDE004EE8F1 /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		C94D0A151F368040004EE8F1 /* PokemonAnno.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonAnno.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				C94D0A001F35D0D3004EE8F1 /* PokeMonGo.xcdatamodeld */,
 				C94D0A111F35E99E004EE8F1 /* PokedexViewController.swift */,
 				C94D0A131F35EBDE004EE8F1 /* CoreDataHelper.swift */,
+				C94D0A151F368040004EE8F1 /* PokemonAnno.swift */,
 			);
 			path = PokeMonGo;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				C94D0A141F35EBDE004EE8F1 /* CoreDataHelper.swift in Sources */,
 				C94D09FC1F35D0D3004EE8F1 /* ViewController.swift in Sources */,
 				C94D0A121F35E99E004EE8F1 /* PokedexViewController.swift in Sources */,
+				C94D0A161F368040004EE8F1 /* PokemonAnno.swift in Sources */,
 				C94D0A021F35D0D3004EE8F1 /* PokeMonGo.xcdatamodeld in Sources */,
 				C94D09FA1F35D0D3004EE8F1 /* AppDelegate.swift in Sources */,
 			);
