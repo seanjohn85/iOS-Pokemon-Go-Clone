@@ -91,11 +91,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         
     }
     
-    
+    //applying images to annotations
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let view = MKAnnotationView(annotation: annotation, reuseIdentifier: nil)
         
-        
+        //if the anno is the user
         if annotation is MKUserLocation{
             view.image = UIImage(named: "player")
         }else{
@@ -103,14 +103,36 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             view.image = UIImage(named: p.imageName!)
         }
         
-        
+        //resize
         var frame = view.frame
         frame.size.height = 40
         frame.size.width = 40
         view.frame = frame
-        
-        
+        //return anno with new image
         return  view
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        
+        print("tap")
+        map.deselectAnnotation(view.annotation!, animated: true)
+        //if the anno is the user
+        if view.annotation! is MKUserLocation{
+            //moves pokemon to center and checks is the user is still in view
+        }else{
+            //set the amount of map to display
+            let region = MKCoordinateRegionMakeWithDistance(view.annotation!.coordinate, 300, 300)
+            //set the region
+            map.setRegion(region, animated: true)
+            if let cord = self.manager.location?.coordinate{
+                //check if the user is still in display
+                if MKMapRectContainsPoint(map.visibleMapRect, MKMapPointForCoordinate(cord)){
+                    print("in view")
+                }else{
+                    print("to far away")
+                }
+            }
+        }
     }
 
 
