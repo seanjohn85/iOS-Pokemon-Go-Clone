@@ -60,7 +60,23 @@ func getAllPoke() -> [Pokemon]{
     }catch{
         
     }
-    
     return []
-    
 }
+
+
+//all cot
+func getAll(cot : Bool) -> [Pokemon]{
+    let ctx = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    let fetch = Pokemon.fetchRequest() as NSFetchRequest<Pokemon>
+    fetch.predicate = NSPredicate(format: "cot == %@", cot as CVarArg)
+    do {
+        let p = try ctx.fetch(fetch) as [Pokemon]
+        
+        return p
+    }catch{
+        
+    }
+    return []
+}
+
