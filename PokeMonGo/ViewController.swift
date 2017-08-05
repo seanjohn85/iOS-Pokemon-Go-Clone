@@ -14,6 +14,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet var map: MKMapView!
     
+    //
+    var updeteMap = 0
+    
     //used to manager the users location
     var manager = CLLocationManager()
     
@@ -25,20 +28,26 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse{
             //shows the users location
             map.showsUserLocation = true
+            //update the manager with the users location
+            manager.startUpdatingLocation()
         }else{
             //request user permission
             manager.requestWhenInUseAuthorization()
         }
-        
-        
-        
+ 
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("did update")
+        if updeteMap < 5 {
+            //set the amount of map to display
+            let region = MKCoordinateRegionMakeWithDistance(manager.location!.coordinate, 1000, 1000)
+            //set the region
+            map.setRegion(region, animated: false)
+            updeteMap += 1
+        }
+        
     }
-
 
 }
 
