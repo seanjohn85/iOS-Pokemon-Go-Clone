@@ -14,6 +14,8 @@
 		C94D0A041F35D0D3004EE8F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C94D0A031F35D0D3004EE8F1 /* Assets.xcassets */; };
 		C94D0A071F35D0D3004EE8F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C94D0A051F35D0D3004EE8F1 /* LaunchScreen.storyboard */; };
 		C94D0A101F35D484004EE8F1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C94D0A0F1F35D484004EE8F1 /* MapKit.framework */; };
+		C94D0A121F35E99E004EE8F1 /* PokedexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94D0A111F35E99E004EE8F1 /* PokedexViewController.swift */; };
+		C94D0A141F35EBDE004EE8F1 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94D0A131F35EBDE004EE8F1 /* CoreDataHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		C94D0A061F35D0D3004EE8F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C94D0A081F35D0D3004EE8F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C94D0A0F1F35D484004EE8F1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C94D0A111F35E99E004EE8F1 /* PokedexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokedexViewController.swift; sourceTree = "<group>"; };
+		C94D0A131F35EBDE004EE8F1 /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,8 @@
 				C94D0A051F35D0D3004EE8F1 /* LaunchScreen.storyboard */,
 				C94D0A081F35D0D3004EE8F1 /* Info.plist */,
 				C94D0A001F35D0D3004EE8F1 /* PokeMonGo.xcdatamodeld */,
+				C94D0A111F35E99E004EE8F1 /* PokedexViewController.swift */,
+				C94D0A131F35EBDE004EE8F1 /* CoreDataHelper.swift */,
 			);
 			path = PokeMonGo;
 			sourceTree = "<group>";
@@ -152,7 +158,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C94D0A141F35EBDE004EE8F1 /* CoreDataHelper.swift in Sources */,
 				C94D09FC1F35D0D3004EE8F1 /* ViewController.swift in Sources */,
+				C94D0A121F35E99E004EE8F1 /* PokedexViewController.swift in Sources */,
 				C94D0A021F35D0D3004EE8F1 /* PokeMonGo.xcdatamodeld in Sources */,
 				C94D09FA1F35D0D3004EE8F1 /* AppDelegate.swift in Sources */,
 			);

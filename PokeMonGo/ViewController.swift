@@ -30,6 +30,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             map.showsUserLocation = true
             //update the manager with the users location
             manager.startUpdatingLocation()
+            //set a timer intervel to run every 5 seconds
+            Timer.scheduledTimer(withTimeInterval: 5, repeats: true, block: { (timer) in
+                //span pokemon
+                if let cord = self.manager.location?.coordinate{
+                    //add anotation to the map
+                    let annotation = MKPointAnnotation()
+                    
+                    annotation.coordinate = cord
+                    annotation.coordinate.latitude += (Double(arc4random_uniform(200)) - 100.0) / 40000.0
+                    annotation.coordinate.longitude += (Double(arc4random_uniform(200)) - 100.0) / 40000.0
+                    //add the annotation to the map
+                    self.map.addAnnotation(annotation)
+                }
+                
+            })
         }else{
             //request user permission
             manager.requestWhenInUseAuthorization()
@@ -45,6 +60,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             let region = MKCoordinateRegionMakeWithDistance(manager.location!.coordinate, 300, 300)
             //set the region
             map.setRegion(region, animated: false)
+            
             updeteMap += 1
         }else{
             manager.stopUpdatingLocation()
