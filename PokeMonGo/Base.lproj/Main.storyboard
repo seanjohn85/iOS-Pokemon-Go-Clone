@@ -24,11 +24,24 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PFd-Xm-4xJ">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIK-xH-Fck">
+                                <rect key="frame" x="315" y="40" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="RLl-io-OBU"/>
+                                    <constraint firstAttribute="width" constant="50" id="odq-Ao-9hy"/>
+                                </constraints>
+                                <state key="normal" image="compass"/>
+                                <connections>
+                                    <action selector="compassBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kA4-KN-quo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PFd-Xm-4xJ" secondAttribute="bottom" id="9nd-hY-ceH"/>
                             <constraint firstItem="PFd-Xm-4xJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="CUu-KU-DtY"/>
+                            <constraint firstAttribute="trailing" secondItem="aIK-xH-Fck" secondAttribute="trailing" constant="10" id="TNI-c5-eSZ"/>
+                            <constraint firstItem="aIK-xH-Fck" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="VpH-9N-uxJ"/>
                             <constraint firstItem="PFd-Xm-4xJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="dty-sH-1IS"/>
                             <constraint firstAttribute="trailing" secondItem="PFd-Xm-4xJ" secondAttribute="trailing" id="r5B-8K-FTY"/>
                         </constraints>
@@ -41,4 +54,7 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="compass" width="512" height="512"/>
+    </resources>
 </document>

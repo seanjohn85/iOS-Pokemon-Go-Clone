@@ -37,17 +37,36 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
  
     }
 
+    //update location
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print("did update")
         if updeteMap < 5 {
             //set the amount of map to display
-            let region = MKCoordinateRegionMakeWithDistance(manager.location!.coordinate, 1000, 1000)
+            let region = MKCoordinateRegionMakeWithDistance(manager.location!.coordinate, 300, 300)
             //set the region
             map.setRegion(region, animated: false)
             updeteMap += 1
+        }else{
+            manager.stopUpdatingLocation()
         }
         
     }
+    
+    
+    
+    //compass button action to repostion map in users location
+    
+    @IBAction func compassBtn(_ sender: Any){
+        //ensure coordinate excists to avoid errors
+        if let cord = manager.location?.coordinate{
+            //set the amount of map to display
+            let region = MKCoordinateRegionMakeWithDistance(cord, 300, 300)
+            //set the region
+            map.setRegion(region, animated: true)
+        }
+        
+    }
+
 
 }
 
