@@ -20,8 +20,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     //used to manager the users location
     var manager = CLLocationManager()
     
+    //pokemen
+    var pokemen : [Pokemon] = []
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //get pokemon from core dataa nd store into array
+        pokemen = getAllPoke()
         //set up manager
         manager.delegate = self
         

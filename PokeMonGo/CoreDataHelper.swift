@@ -41,6 +41,26 @@ func create(name : String){
     let pokemon = Pokemon(context: ctx)
     pokemon.name = name.capitalized
     pokemon.imageName = name
+
+}
+
+//get all pokemon from core data
+
+func getAllPoke() -> [Pokemon]{
     
+    let ctx = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    do {
+        let p = try ctx.fetch(Pokemon.fetchRequest()) as! [Pokemon]
+        //on first run add all pokemon
+        if p.count == 0 {
+            addallPoke()
+            return getAllPoke()
+        }
+        return p
+    }catch{
+        
+    }
+    
+    return []
     
 }
